@@ -2,10 +2,7 @@ import React from 'react'
 import CIcon from '@coreui/icons-react'
 import {
   cilBell,
-  // cilCalculator,
-  // cilChartPie,
   cilCursor,
-  // cilDescription,
   cilDrop,
   cilNotes,
   cilPencil,
@@ -21,10 +18,6 @@ const _nav = [
     name: 'Introduction',
     to: '/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
-    // badge: {
-    //   color: 'info',
-    //   text: 'NEW',
-    // },
   },
   {
     component: CNavTitle,
@@ -33,13 +26,13 @@ const _nav = [
   {
     component: CNavItem,
     name: 'SQL',
-    to: '/theme/colors',
+    to: '/installation/sql',
     icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Typography',
-    to: '/theme/typography',
+    name: 'DCM',
+    to: '/installation/dcm',
     icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
   },
   {
@@ -49,103 +42,95 @@ const _nav = [
   {
     component: CNavGroup,
     name: 'System Control',
-    to: '/base',
+    to: '/scs',
     icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
-    items: [
-      {
-        component: CNavItem,
-        name: 'Accordion',
-        to: '/base/accordion',
-      },
-      {
-        component: CNavItem,
-        name: 'Breadcrumb',
-        to: '/base/breadcrumbs',
-      },
-      {
-        component: CNavItem,
-        name: 'Cards',
-        to: '/base/cards',
-      },
-      {
-        component: CNavItem,
-        name: 'Carousel',
-        to: '/base/carousels',
-      },
-      {
-        component: CNavItem,
-        name: 'Collapse',
-        to: '/base/collapses',
-      },
-      {
-        component: CNavItem,
-        name: 'List group',
-        to: '/base/list-groups',
-      },
-      {
-        component: CNavItem,
-        name: 'Navs & Tabs',
-        to: '/base/navs',
-      },
-      {
-        component: CNavItem,
-        name: 'Pagination',
-        to: '/base/paginations',
-      },
-      {
-        component: CNavItem,
-        name: 'Placeholders',
-        to: '/base/placeholders',
-      },
-      {
-        component: CNavItem,
-        name: 'Popovers',
-        to: '/base/popovers',
-      },
-      {
-        component: CNavItem,
-        name: 'Progress',
-        to: '/base/progress',
-      },
-      {
-        component: CNavItem,
-        name: 'Spinners',
-        to: '/base/spinners',
-      },
-      {
-        component: CNavItem,
-        name: 'Tables',
-        to: '/base/tables',
-      },
-      {
-        component: CNavItem,
-        name: 'Tooltips',
-        to: '/base/tooltips',
-      },
-    ],
-  },
-  {
-    component: CNavGroup,
-    name: 'Customer Service',
-    to: '/buttons',
-    icon: <CIcon icon={cilCursor} customClassName="nav-icon" />,
-    items: [
-      {
-        component: CNavItem,
-        name: 'Buttons',
-        to: '/buttons/buttons',
-      },
-      {
-        component: CNavItem,
-        name: 'Buttons groups',
-        to: '/buttons/button-groups',
-      },
-      {
-        component: CNavItem,
-        name: 'Dropdowns',
-        to: '/buttons/dropdowns',
-      },
-    ],
+    items: {
+      component: CNavGroup,
+      name: 'Data',
+      to: '/scs/data',
+      items: [
+        {
+          component: CNavItem,
+          name: 'Customer Category',
+          to: '/scs/data/customerCategory',
+        },
+        {
+          component: CNavItem,
+          name: 'Meter Size',
+          to: '/scs/data/meterSize',
+        },
+        {
+          component: CNavItem,
+          name: 'Village',
+          to: '/scs/data/village',
+        },
+        {
+          component: CNavItem,
+          name: 'Bill Cycle',
+          to: '/scs/data/billCycle',
+        },
+        {
+          component: CNavItem,
+          name: 'Country Origin',
+          to: '/scs/data/countryOrigin',
+        },
+        {
+          component: CNavItem,
+          name: 'Meter Class',
+          to: '/scs/data/meterClass',
+        },
+        {
+          component: CNavItem,
+          name: 'Meter Digit',
+          to: '/scs/data/meterDigit',
+        },
+        {
+          component: CNavItem,
+          name: 'Meter Type',
+          to: '/scs/data/meterType',
+        },
+        {
+          component: CNavItem,
+          name: 'Meter Model',
+          to: '/scs/data/meterModel',
+        },
+        {
+          component: CNavItem,
+          name: 'Meter Size Group',
+          to: '/scs/data/meterSizeGroup',
+        },
+        {
+          component: CNavItem,
+          name: 'Tariff Rate Group',
+          to: '/scs/data/tariffRateGroup',
+        },
+        {
+          component: CNavItem,
+          name: 'Consumption Level',
+          to: '/scs/data/consLevel',
+        },
+        {
+          component: CNavItem,
+          name: 'Water Source',
+          to: '/scs/data/waterSource',
+        },
+        {
+          component: CNavItem,
+          name: 'Invoice Prefix',
+          to: '/scs/data/invoicePrefix',
+        },
+        {
+          component: CNavItem,
+          name: 'Payment Mode',
+          to: '/scs/data/paymentMode',
+        },
+        {
+          component: CNavItem,
+          name: 'Reason Investigation',
+          to: '/scs/data/reasonInvestigation',
+        },
+      ],
+    },
   },
   {
     component: CNavGroup,
@@ -155,42 +140,42 @@ const _nav = [
       {
         component: CNavItem,
         name: 'Form Control',
-        to: '/forms/form-control',
+        to: '/bps/form-control',
       },
       {
         component: CNavItem,
         name: 'Select',
-        to: '/forms/select',
+        to: '/bps/select',
       },
       {
         component: CNavItem,
         name: 'Checks & Radios',
-        to: '/forms/checks-radios',
+        to: '/bps/checks-radios',
       },
       {
         component: CNavItem,
         name: 'Range',
-        to: '/forms/range',
+        to: '/bps/range',
       },
       {
         component: CNavItem,
         name: 'Input Group',
-        to: '/forms/input-group',
+        to: '/bps/input-group',
       },
       {
         component: CNavItem,
         name: 'Floating Labels',
-        to: '/forms/floating-labels',
+        to: '/bps/floating-labels',
       },
       {
         component: CNavItem,
         name: 'Layout',
-        to: '/forms/layout',
+        to: '/bps/layout',
       },
       {
         component: CNavItem,
         name: 'Validation',
-        to: '/forms/validation',
+        to: '/bps/validation',
       },
     ],
   },
@@ -208,7 +193,7 @@ const _nav = [
       {
         component: CNavItem,
         name: 'CoreUI Free',
-        to: '/icons/coreui-icons',
+        to: '/obp/coreui-icons',
         badge: {
           color: 'success',
           text: 'NEW',
@@ -217,12 +202,12 @@ const _nav = [
       {
         component: CNavItem,
         name: 'CoreUI Flags',
-        to: '/icons/flags',
+        to: '/obp/flags',
       },
       {
         component: CNavItem,
         name: 'CoreUI Brands',
-        to: '/icons/brands',
+        to: '/obp/brands',
       },
     ],
   },
@@ -234,22 +219,22 @@ const _nav = [
       {
         component: CNavItem,
         name: 'Alerts',
-        to: '/notifications/alerts',
+        to: '/dcm/alerts',
       },
       {
         component: CNavItem,
         name: 'Badges',
-        to: '/notifications/badges',
+        to: '/dcm/badges',
       },
       {
         component: CNavItem,
         name: 'Modal',
-        to: '/notifications/modals',
+        to: '/dcm/modals',
       },
       {
         component: CNavItem,
         name: 'Toasts',
-        to: '/notifications/toasts',
+        to: '/dcm/toasts',
       },
     ],
   },

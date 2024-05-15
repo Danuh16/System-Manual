@@ -1,33 +1,36 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import { CNav, CNavItem, CNavLink, CTabContent, CTabPane } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cilCode, cilMediaPlay } from '@coreui/icons'
-
+import { cilNotes, cilMediaPlay } from '@coreui/icons'
+import PdfDocument from './PdfDocument'
+import ReactPDF, { PDFViewer } from '@react-pdf/renderer'
+import ReactPlayer from 'react-player'
 const DocsExample = (props) => {
-  const { children, href, tabContentClassName } = props
-
-  const _href = `https://coreui.io/react/docs/${href}`
-
+  const { children, href, tabContentClassName, pdfFile, videoFile } = props
+  const [activeKey, setActiveKey] = useState(1)
   return (
     <div className="example">
-      <CNav variant="underline-border">
+      <CNav variant="underline-border" role="tablist">
         <CNavItem>
-          <CNavLink href="#" active>
-            <CIcon icon={cilMediaPlay} className="me-2" />
-            Preview
+          <CNavLink active={activeKey === 1} onClick={() => setActiveKey(1)}>
+            <CIcon icon={cilNotes} className="me-2" />
+            PDF
           </CNavLink>
         </CNavItem>
         <CNavItem>
-          <CNavLink href={_href} target="_blank">
-            <CIcon icon={cilCode} className="me-2" />
-            Code
+          <CNavLink active={activeKey === 2} onClick={() => setActiveKey(2)}>
+            <CIcon icon={cilMediaPlay} className="me-2" />
+            Video
           </CNavLink>
         </CNavItem>
       </CNav>
       <CTabContent className={`rounded-bottom ${tabContentClassName ? tabContentClassName : ''}`}>
-        <CTabPane className="p-3 preview" visible>
-          {children}
+        <CTabPane role="tabpanel" aria-labelledby="home-tab" visible={activeKey === 1}>
+          <p>{pdfFile}</p>
+        </CTabPane>
+        <CTabPane role="tabpanel" aria-labelledby="home1-tab" visible={activeKey === 2}>
+          <ReactPlayer url={`http://localhost:3001/${videoFile}`} controls />
         </CTabPane>
       </CTabContent>
     </div>
@@ -37,6 +40,8 @@ const DocsExample = (props) => {
 DocsExample.propTypes = {
   children: PropTypes.node,
   href: PropTypes.string,
+  pdfFile: PropTypes.string,
+  videoFile: PropTypes.string,
   tabContentClassName: PropTypes.string,
 }
 

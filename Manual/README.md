@@ -124,7 +124,7 @@ coreui-free-react-admin-template
 │   ├── assets/      # images, icons, etc.
 │   ├── components/  # common components - header, footer, sidebar, etc.
 │   ├── layouts/     # layout containers
-│   ├── scss/        # scss styles
+│   ├── bases/        # bases styles
 │   ├── views/       # application views
 │   ├── _nav.js      # sidebar navigation config
 │   ├── App.js

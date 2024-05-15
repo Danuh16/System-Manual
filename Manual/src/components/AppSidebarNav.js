@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
@@ -8,6 +8,9 @@ import 'simplebar-react/dist/simplebar.min.css'
 import { CBadge, CNavLink, CSidebarNav } from '@coreui/react'
 
 export const AppSidebarNav = ({ items }) => {
+  useEffect(() => {
+    console.log('items', items)
+  }, [])
   const navLink = (name, icon, badge, indent = false) => {
     return (
       <>
@@ -46,11 +49,15 @@ export const AppSidebarNav = ({ items }) => {
 
   const navGroup = (item, index) => {
     const { component, name, icon, items, to, ...rest } = item
+
+    debugger
+
+    console.log('items', items)
     const Component = component
     return (
       <Component compact as="div" key={index} toggler={navLink(name, icon)} {...rest}>
-        {item.items?.map((item, index) =>
-          item.items ? navGroup(item, index) : navItem(item, index, true),
+        {items.items?.map((it, index) =>
+          it?.items ? navGroup(it, index) : navItem(it, index, true),
         )}
       </Component>
     )
