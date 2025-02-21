@@ -50,13 +50,11 @@ export const AppSidebarNav = ({ items }) => {
   const navGroup = (item, index) => {
     const { component, name, icon, items, to, ...rest } = item
 
-    debugger
-
-    console.log('items', items)
+    console.log("navgroup",item,component)
     const Component = component
     return (
       <Component compact as="div" key={index} toggler={navLink(name, icon)} {...rest}>
-        {items.items?.map((it, index) =>
+        {items?.map((it, index) =>
           it?.items ? navGroup(it, index) : navItem(it, index, true),
         )}
       </Component>
@@ -66,10 +64,24 @@ export const AppSidebarNav = ({ items }) => {
   return (
     <CSidebarNav as={SimpleBar}>
       {items &&
-        items.map((item, index) => (item.items ? navGroup(item, index) : navItem(item, index)))}
+        items.map((item, index) => (item?.items ? navGroup(item, index) : navItem(item, index)))}
     </CSidebarNav>
   )
 }
+
+// const navItem = (item, index, isChild = false) => {
+//   const { component, name, to } = item;
+//   const Component = component;
+
+//   return (
+//     <Component
+//       key={index}
+//       name={name}
+//       to={to}
+//       icon={isChild ? <span className="nav-icon"></span> : undefined}
+//     />
+//   );
+// };
 
 AppSidebarNav.propTypes = {
   items: PropTypes.arrayOf(PropTypes.any).isRequired,

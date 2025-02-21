@@ -4,10 +4,14 @@ import { CNav, CNavItem, CNavLink, CTabContent, CTabPane } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilNotes, cilMediaPlay } from '@coreui/icons'
 import PdfDocument from './PdfDocument'
-import ReactPDF, { PDFViewer } from '@react-pdf/renderer'
+import PdfViewer from './PdfViewer'
 import ReactPlayer from 'react-player'
 const DocsExample = (props) => {
   const { children, href, tabContentClassName, pdfFile, videoFile } = props
+
+ 
+
+  
   const [activeKey, setActiveKey] = useState(1)
   return (
     <div className="example">
@@ -27,7 +31,7 @@ const DocsExample = (props) => {
       </CNav>
       <CTabContent className={`rounded-bottom ${tabContentClassName ? tabContentClassName : ''}`}>
         <CTabPane role="tabpanel" aria-labelledby="home-tab" visible={activeKey === 1}>
-          <p>{pdfFile}</p>
+        <PdfViewer pdfFile={pdfFile} />
         </CTabPane>
         <CTabPane role="tabpanel" aria-labelledby="home1-tab" visible={activeKey === 2}>
           <ReactPlayer url={`http://localhost:3001/${videoFile}`} controls />

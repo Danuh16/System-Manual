@@ -51,7 +51,7 @@ const Colors = () => {
   return (
     <>
       <CCard className="mb-5">
-        <CCardHeader>Theme colors</CCardHeader>
+        <CCardHeader>Manuals</CCardHeader>
         <CCardBody>
           <DocsExample href="components/accordion" pdfFile="sample.pdf" videoFile="prep.mp4" />
         </CCardBody>

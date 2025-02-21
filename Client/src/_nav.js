@@ -15,7 +15,7 @@ import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 const _nav = [
   {
     component: CNavItem,
-    name: 'Introduction',
+    name: 'Introduction2',
     to: '/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
   },
@@ -44,93 +44,28 @@ const _nav = [
     name: 'System Control',
     to: '/scs',
     icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
-    items: {
-      component: CNavGroup,
-      name: 'Data',
-      to: '/scs/data',
-      items: [
-        {
-          component: CNavItem,
-          name: 'Customer Category',
-          to: '/scs/data/customerCategory',
-        },
-        {
-          component: CNavItem,
-          name: 'Meter Size',
-          to: '/scs/data/meterSize',
-        },
-        {
-          component: CNavItem,
-          name: 'Village',
-          to: '/scs/data/village',
-        },
-        {
-          component: CNavItem,
-          name: 'Bill Cycle',
-          to: '/scs/data/billCycle',
-        },
-        {
-          component: CNavItem,
-          name: 'Country Origin',
-          to: '/scs/data/countryOrigin',
-        },
-        {
-          component: CNavItem,
-          name: 'Meter Class',
-          to: '/scs/data/meterClass',
-        },
-        {
-          component: CNavItem,
-          name: 'Meter Digit',
-          to: '/scs/data/meterDigit',
-        },
-        {
-          component: CNavItem,
-          name: 'Meter Type',
-          to: '/scs/data/meterType',
-        },
-        {
-          component: CNavItem,
-          name: 'Meter Model',
-          to: '/scs/data/meterModel',
-        },
-        {
-          component: CNavItem,
-          name: 'Meter Size Group',
-          to: '/scs/data/meterSizeGroup',
-        },
-        {
-          component: CNavItem,
-          name: 'Tariff Rate Group',
-          to: '/scs/data/tariffRateGroup',
-        },
-        {
-          component: CNavItem,
-          name: 'Consumption Level',
-          to: '/scs/data/consLevel',
-        },
-        {
-          component: CNavItem,
-          name: 'Water Source',
-          to: '/scs/data/waterSource',
-        },
-        {
-          component: CNavItem,
-          name: 'Invoice Prefix',
-          to: '/scs/data/invoicePrefix',
-        },
-        {
-          component: CNavItem,
-          name: 'Payment Mode',
-          to: '/scs/data/paymentMode',
-        },
-        {
-          component: CNavItem,
-          name: 'Reason Investigation',
-          to: '/scs/data/reasonInvestigation',
-        },
-      ],
-    },
+    items: [
+      {
+        component: CNavItem,
+        name: 'Data',
+        to: '/scs/data',
+      },
+      {
+        component: CNavItem,
+        name: 'Maintain',
+        to: '/scs/maintain',
+      },
+      {
+        component: CNavItem,
+        name: 'Setup',
+        to: '/scs/setup',
+      },
+      {
+        component: CNavItem,
+        name: 'Setting',
+        to: '/scs/setting',
+      },
+    ],
   },
   {
     component: CNavGroup,
